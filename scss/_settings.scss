@@ -1,0 +1,49 @@
+.settings-body{
+		
+	p.settingsText{
+	  font-size: $font-small;
+	  color: $gray-medium;
+
+	  text-align: left;
+	  margin: 10px;
+	}
+
+
+	input#timeInput{
+		text-align: left;
+	    right: 0;
+	    direction: ltr;
+	    background-color: white;
+	    line-height: 36px;
+	    padding-right:0;
+	    margin-right:0;
+	    float: right;
+
+	}
+
+	label.item-input-wrapper{
+	    background-color: white;
+	    display: block;
+	}
+
+	div.item-divider{
+	    padding: 16px;
+	    font-size:20px;
+	}
+
+	div.item-toggle div{
+	    text-align: left;
+	}
+	span.input-label{
+	    text-align: left;
+	    max-width: 200px;
+	    float: left;
+	}
+
+	.toggle input:checked + .track {
+	    background-color:#283593;
+	    border-color:#283593;
+	}
+
+	
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>The App of Happiness</title>
+    
+    <!-- ionic css -->
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+
+
+    <!-- angularjs scripts -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ng-timeago/ngtimeago.js"></script>
+
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/angular-moment/angular-moment.js"></script>
+    <script src="lib/moment-timezone/moment-timezone.js"></script>
+    <script src="js/animate.js"></script>
+
+    <!-- cordova script -->
+    <script src="cordova.js"></script>
+    
+    <!-- your app's scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/utils.js"></script>
+  </head>
+
+  <body ng-app="i-apps-of" animation="slide-left-right-ios">
+    
+        <ion-nav-bar class="bar-happy"></ion-nav-bar>
+
+        <ion-nav-view>
+
+            <script>
+            function openExternal(elem) {
+                window.open(elem.href, "_system");
+                return false; // Prevent execution of the default onClick handler 
+            }
+            window.shouldRotateToOrientation = function(degrees) {
+                return true;
+            }
+            //angular.element($window).bind('orientationchange', function () {
+            //    console.log(window.orientation)
+            //});
+            </script>
+
+
+        </ion-nav-view>
+    
+  </body>
+
+</html>

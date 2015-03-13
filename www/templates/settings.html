@@ -1,0 +1,50 @@
+<ion-view view-title="Settings" on-swipe-right="onswiperight()">
+
+    <ion-nav-bar class="bar-happy">
+        <ion-nav-back-button>
+  		</ion-nav-back-button>
+    </ion-nav-bar>
+
+
+	<ion-content has-header="true" has-subheader="false" ng-class="{'has-loading': message.showMessage}" class="settings-body">
+    
+    	<div class="bar bar-error" ng-if="no_internet">Running in offline mode - no settings can be changed.</div>
+    	<div class="bar bar-loading bar-assertive" ng-if="message.showMessage">{{message.messageText}}</div>
+    	
+
+	    <div class="text-center padding">
+	    	<form novalidate class="simple-form" name="settingsForm">
+	    		<div class="list card topCard">
+    		  		<ion-toggle ng-model="user.push_ind" ng-change="updateUserSettings()" ng-disabled="no_internet">Recieve push notifications:</ion-toggle>
+				  	<p class="settingsText"> Daily content will still be added if turned off</p>
+				</div>
+
+	    		<div class="list card">				
+			  	    <label class="item item-input-wrapper">
+			  	    	<span class="input-label">Notification time:</span>
+
+  						<input type="time" id="timeInput" name="timeIn" ng-model="user.send_time" placeholder="HH:mm" ng-change="updateUserSettings()" ng-model-options="{ updateOn: 'blur' }" ng-disabled="no_internet" step="60" required>
+					</label>
+				    <p class="settingsText">Delivery will be within ten minutes of this time. Next notification will be {{ receive_date }} </p>
+				</div>
+
+
+	    		<div class="list card">
+					  <div class="item item-divider">
+					    Your categories
+					  </div>
+					  <ion-toggle ng-repeat="uc in user_categories" ng-model="uc.subscribe_ind" ng-change="updateCategory(uc)" ng-disabled="no_internet">
+			            {{ uc.category.name }}
+			          </ion-toggle>
+				</div>
+
+
+			</form>
+			<a href="/#/home" nav-direction="back" class="button icon-left ion-ios-home-outline button-outline button-dark">Home</a>
+
+	    </div>
+
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,186 @@
+
+.task-body{
+    
+  .huge{    
+      display: block;
+      font-size: 2800%;
+      line-height: 1;
+      position: absolute;
+      top: 120px;
+      right: 10px;
+      color: #ff5e3a;
+      font-family: $font-script;
+  }
+
+  div.wrapper{
+    padding: 16px;
+
+    .item{
+      background: 0;
+      border: 0 !important;
+    }
+    
+  }
+
+  hr.light { 
+    margin: 25px 3px;
+    border: 0; 
+    height: 0; 
+    border-bottom: 1px solid $hot-pink; 
+  }
+
+
+  hr.swooped { 
+    height: 30px; 
+    border-style: solid; 
+    border-color: $hot-orange; 
+    border-width: 1px 0 0 0; 
+    border-radius: 20px; 
+  } 
+
+  hr.swooped:before { /* Not really supposed to work, but does */ 
+    display: block; 
+    content: ""; 
+    height: 30px; 
+    margin-top: -31px; 
+    border-style: solid; 
+    border-color:$hot-orange; 
+    border-width: 0 0 1px 0; 
+    border-radius: 20px; 
+  }
+
+
+
+
+  div.task-title{
+    margin: 10px -1px;
+    max-width: 80%;
+
+    .title{
+      font-family: $font-demibold;
+      padding-top:6px;
+      let­ter-spac­ing: 2px;
+      font-size: $font-head;
+      line-height: 100%;
+    }
+
+    .icon{
+      font-size: 24px;
+      line-height: 26px;
+      margin-top: 3px;
+
+      &.selected{
+        color: $red;
+      }
+    }
+  } 
+
+
+  div.task-text {
+    font-family: $font-read;
+    font-size: $font-base;
+    margin-bottom: 17px;
+    line-height: 135%;
+  }
+
+
+
+  div.view-quote {
+    font-family: $font-pretty;
+    font-size: $font-bigger;
+    font-color: $gray-brown;
+    line-height : 1.3;
+    margin: 0;
+    padding: 0;
+
+
+    .firstLetter {
+        font-family: $font-script;  
+        font-size   : $font-huge;
+        color: $secondary-text;
+        float: left; 
+        line-height : 0.5em;
+        padding: 0;
+        margin: 15px -2px -2px 0;
+    } 
+
+    .remaining-quote{
+      padding: 20px 0 0 22px;
+      margin: 0;
+    }
+
+
+    .by{
+      font-family: $font-light;
+      line-height: 1.2;
+      padding-left: 25px;
+      padding-top: 10px;
+    }
+
+  }
+
+
+  .item-header{
+      let­ter-spac­ing: 2px;
+      h1{
+        text-align: left;
+      }
+      
+  }
+
+  .more-links{
+    a{
+      padding-left: 48px;
+      margin-left: 5px;
+    }
+  }
+
+
+  margin-bottom: 50px;
+
+}
+
+
+.task-footer{
+  background-color: #1A237E;
+  vertical-align: middle;
+  color: #FFFFFF;
+
+  div{
+      padding-left: 8px;
+      vertical-align: middle;
+
+      .text{
+        font-size: 17px;
+        font-weight: 500;
+        height: 43px;
+        line-height: 34px;
+        vertical-align: middle;
+      }
+
+      .toggle{
+        top: 1px;
+        right: 3px;
+      }
+
+      .icon{
+          color: $hot-pink;
+          font-size: $icon-big;
+          vertical-align: middle;
+      }
+
+      button{
+          margin-left:7px;
+          padding: 2px 4px;
+      }
+
+      .button.button-assertive.button-outline {
+        background: none repeat scroll 0 0 transparent;
+        border-color: $hot-pink;
+        color: $hot-pink;
+      }
+
+  }
+
+}
+

@@ -1,0 +1,116 @@
+<ion-view view-title="{{task.title}}" on-swipe-right="onswiperight()">
+	<ion-nav-buttons side="primary">
+      <a href="#/home" nav-direction="back"><button class="button button-icon icon ion-ios-arrow-left"></button></a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="secondary">
+      <a href="#/settings" nav-direction="forward"><button class="button button-icon icon ion-ios-gear-outline"></button></a>
+    </ion-nav-buttons>
+
+
+	<ion-content has-header="true" class="task-body">
+    
+    	<div class="bar bar-error" ng-if="no_internet">Running in offline mode.</div>
+
+		<div class="wrapper">
+			<div class="list" id="text-card" ng-if="!task.title">
+			  <div class="item item-divider" id="text-card-head">
+			    <span class="title">Please connect to the internet </span>
+			  </div>
+			  <div class="item item-text-wrap">
+		        Sorry, but this notification is currently unavailable.  Please check your network connection and try again.
+		      </div>
+		    </div>
+
+		    <div class="task-title">
+		    	<span class="title">{{ task.title }}</span>
+
+		    	<button class="button button-small button-icon icon" ng-class="{ 'selected ion-ios-heart': user_task.fave_ind, 'pink ion-ios-heart-outline': !user_task.fave_ind }" on-touch="updateFave()" ng-model="user_task.fave_ind"></button>
+		    </div>
+
+			<div class="task-text" ng-if="task.title">
+		        {{ task.text }}
+		    </div>
+
+
+		    <hr class="light" />
+			<div ng-repeat="q in task.quotes" class="view-quote">
+				<div class="firstLetter">&ldquo;{{ q.text | limitTo:1 }}</div>
+				<div class="remaining-quote">{{ q.text | removeFirstLetter }}</div>
+				<div class="by" ng-if="q.url.length > 0">— <a href="{{ q.url}}" onClick="javascript:return openExternal(this)">{{q.author}}</a></div>
+				<div class="by" ng-if="q.url === ''">— {{q.author}}</div>
+			</div>
+
+			<hr class="light" />
+
+		    <div class="list" ng-if="task.more_links.length > 0">
+		    	<div class="item item-header">
+    				<h1>Read more</h1>
+  				</div>
+
+  				<div ng-repeat="m in task.more_links" class="more-links">
+			  		<a href="{{ m.url}}" onClick="javascript:return openExternal(this)" class="item item-icon-left">
+			   			<i class="icon ion-ios-book-outline" ng-if="m.link_type == 'Book'"></i>
+						<i class="icon ion-ios-paper-outline" ng-if="m.link_type == 'Article'"></i>
+						<i class="icon ion-ios-book-outline" ng-if="m.link_type == 'Audiobook'"></i>
+						<i class="icon ion-headphone" ng-if="m.link_type == 'Website'"></i>
+						{{ m.name }} ({{ m.link_type}})
+			  		</a>
+			  	</div>
+	        </div>
+
+	        
+
+
+		</div>
+		<br /><br />
+	</ion-content>
+
+	<div class="bar bar-footer task-footer" ng-if="!no_internet">
+
+	  <div ng-switch on="step">
+
+		<div class="fade" ng-switch-when="first_seen">
+		    <span class="text">Think you'll try this?</span>
+		    <button class="button button-small button-outline button-assertive" ng-click="mark_will_do()"> Yes, I will! </button>
+
+		    <button class="button button-small button-outline button-stable" ng-click="setCurrentStep('do_not_show')"> Nope </button>
+
+		</div>
+
+		<div class="fade" ng-switch-when="already_seen">
+		    <span class="text">Did you do this?</span>
+		    <button class="button button-small button-outline button-assertive" ng-click="mark_complete()"> Yes, I did! </button>
+		    <button class="button button-small button-outline button-stable" ng-click="setCurrentStep('do_not_show')"> Nope </button>
+	  	</div>
+
+	  	<div class="fade" ng-switch-when="completed">
+		  	<i class="icon ion-ios-checkmark"></i>&nbsp;&nbsp;<span class="text">You did this!</span>
+		</div>
+
+		<div class="fade" ng-switch-when="just_completed">
+		  	<i class="icon ion-ios-checkmark-outline"></i>&nbsp;&nbsp;<span class="text">{{message}}</span>
+		</div>
+
+		<div class="fade" ng-switch-when="will_complete">
+		  	<i class="icon ion-ios-checkmark-outline"></i>&nbsp;&nbsp;<span class="text">Go for it!</span>
+		</div>
+
+		<div class="fade" ng-switch-when="do_not_show">
+		  	<ion-toggle ng-model="user_task.do_not_show_ind" ng-change="updateTask()">Don't show this again</ion-toggle>
+		</div>
+
+		<div class="fade" ng-switch-when="offline">
+		  	Unable to update while offline
+		</div>
+
+		<div class="fade" ng-switch-default>
+		  	&nbsp;
+		</div>
+	  </div>
+
+
+
+	    
+	</div>
+
+</ion-view>

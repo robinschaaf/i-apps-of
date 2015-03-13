@@ -1,0 +1,115 @@
+
+
+
+
+  div.topCard{
+    margin-top: 11px;
+  }
+
+
+
+
+
+div.completeCount .number{
+  float:left;
+  color: #fb2b69;
+  font-family: 'AvenirNext-UltraLight';
+  font-size: 64px;
+  line-height: 100%;
+  margin: 0px 10px 0px 0px;
+  letter-spacing: -0.11em
+}
+
+div.completeCount .completedIcons{
+  max-width: 95%;
+  padding-top: 3px;
+  padding-bottom: 8px;
+}
+
+div.completeCount .completedText{
+  color: #3D3022;
+
+}
+
+div.completeCount .icon{
+  color: #fb2b69;
+  display: inline;
+  font-size: 14px;
+  margin-right: 5px;
+  position: static;
+}
+
+
+.item{
+    border-bottom: 1px solid #F5F5F5;
+    border-top: 1px solid #F5F5F5;
+    opacity: .95;
+}
+
+.card{
+  opacity: .95;
+}
+
+a.task-list{
+  width: calc(100% - 20px);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+}
+
+a.task-list.card{
+  border-radius: 0px !important;
+  border-bottom: 1px solid #F5F5F5;
+
+}
+
+a.task-list .item{
+  left: 0;
+  right: 10;
+  height: 100%;
+}
+
+.item .icon.status:before{
+    display: inline;
+}
+
+icon.tiny{
+  font-size: 14px;
+}
+
+.item .icon.status{
+    color: #aaa;
+    font-size: 30px;
+    text-align: left;
+    margin-left:2px;
+    position: static;
+    display: inline;
+}
+
+.item .icon.status.active{
+    color:#F44336;
+}
+
+.item .icon{
+    color:#673AB7;
+}
+
+.item h1{
+    margin: 0;
+    text-align: left;
+}
+
+.item div.sub{
+    color: #aaa;
+    font-size: .8em;
+    margin: 3px 0 3px;
+    line-height: 100%;
+    font-style: italic;
+    overflow:hidden;
+}
+
+
+
+
+

@@ -1,0 +1,20 @@
+<ion-view view-title="Error">
+  <ion-nav-buttons side="primary">
+      <a href="#/home" nav-direction="back"><button class="button button-icon icon ion-ios-arrow-left"></button></a>
+    </ion-nav-buttons>
+  <ion-nav-buttons side="secondary">
+        <a href="#/settings" nav-direction="forward" ng-if="!showLoader"><button class="button button-icon icon ion-ios-gear-outline"></button></a>
+    </ion-nav-buttons>
+
+
+	<ion-content has-header="true" has-subheader="false">
+    
+    	<div class="card">
+        <div class="item item-text-wrap">
+    		  <h1>Oh noes!  Something bad just happened!</h1>
+          <p>Please make sure you have an internet connection, or visit <a href="apps-of.com">to report your problem</a> if this persists.</p>
+        </div>
+	    </div>
+
+	</ion-content>
+</ion-view>
